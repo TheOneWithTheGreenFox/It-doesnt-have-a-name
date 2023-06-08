@@ -23,5 +23,14 @@ public class DeckBuilderScript : MonoBehaviour
                 deck.Add(newCard);
             }
         }
+        CardObj joker1 = new CardObj();
+        joker1.number = 0;
+        joker1.suit = (Suit)0;
+        deck.Add(joker1);
+
+        CardObj joker2 = new CardObj();
+        joker2.number = 0;
+        joker2.suit = (Suit)2;
+        deck.Add(joker2);
     }
 }
