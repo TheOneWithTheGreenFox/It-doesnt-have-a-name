@@ -13,6 +13,7 @@ public class DeckBuilderScript : MonoBehaviour
 
     public void BuildDeck()
     {
+        //Loops through suits and numbers making cards
         for (int i = 1; i < 14; i++)
         {
             for (int j = 0; j < 4; j++)
@@ -23,6 +24,7 @@ public class DeckBuilderScript : MonoBehaviour
                 deck.Add(newCard);
             }
         }
+        //Adds Jokers
         CardObj joker1 = new CardObj();
         joker1.number = 0;
         joker1.suit = (Suit)0;
@@ -32,5 +34,8 @@ public class DeckBuilderScript : MonoBehaviour
         joker2.number = 0;
         joker2.suit = (Suit)2;
         deck.Add(joker2);
+
+        //Calls the card draw script now that a deck has been built
+        FindObjectOfType<CardDrawScript>().CallShuffle();
     }
 }
